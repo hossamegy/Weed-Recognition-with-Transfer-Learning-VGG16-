@@ -246,24 +246,6 @@ The `Trainer` class (`src/trainer.py`) provides:
 - **Auto-checkpointing** — saves `.pth` file every time val loss improves
 - **tqdm.auto bars** — renders correctly in terminal and Jupyter/Colab
 
-```
-Epochs:  45%|██████████████         | 45/100 [loss=0.1823, acc=0.9412, val_loss=0.3101, val_acc=0.9108]
-Train: 100%|████████████████████| 45/45 [loss=0.1823, acc=0.9412]
-Val:   100%|████████████████████| 12/12 [loss=0.3101, acc=0.9108]
-```
-
----
-
-## 🐛 Key Bugs Fixed (vs. original Keras paper)
-
-| Bug | Problem | Fix in this repo |
-|-----|---------|-----------------|
-| PIL mode typo | `.convert('RGP')` → palette mode, crashes `ToTensor` | `.convert('RGB')` in `custom_dataset.py` |
-| Double transform | Dataset + Subset both applied transforms → tensor fed to PIL ops | `CustomDataSet(transform=None)`; only `TransformSubset` applies transforms |
-| tqdm in Jupyter | Plain `tqdm` renders incorrectly in Colab notebooks | `tqdm.auto` in `trainer.py`; `tqdm.notebook` in the notebook cell |
-
----
-
 ## 📚 References
 
 1. Jiang, Z. (2019). A Novel Crop Weed Recognition Method Based on Transfer Learning from VGG16 Implemented by Keras. *IOP Conf. Ser.: Mater. Sci. Eng.* 677, 032073. https://doi.org/10.1088/1757-899X/677/3/032073
