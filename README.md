@@ -1,6 +1,6 @@
 # 🌱 Weed Recognition via Transfer Learning (VGG16)
 
-> **MSc AI Engineering — Coursework Implementation**  
+> **MSc Artificial Intelligence Engineering — Coursework Implementation**  
 > A modular PyTorch reproduction of Jiang (2019) with two-phase progressive fine-tuning and early stopping.
 
 ---
